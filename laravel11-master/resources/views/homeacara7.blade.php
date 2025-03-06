@@ -22,4 +22,5 @@
   @include('template.contact')
 
   @include('template.footer')
+  //menghapus file component
 @endsection
