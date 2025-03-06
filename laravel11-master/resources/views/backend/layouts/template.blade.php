@@ -38,7 +38,7 @@
     @include('backend.layouts.sidebar')
 
     <main id="main" class="main">
-        @yield('content-admin')
+        @yield('content')
     </main>
 
     @include('backend.layouts.footer')
