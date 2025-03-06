@@ -11,7 +11,7 @@ class LoginController extends Controller
     /**
      * Redirect setelah login berhasil.
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Constructor.
@@ -47,7 +47,7 @@ class LoginController extends Controller
     ];
 
     if (Auth::attempt($login)) {
-        return redirect()->intended('/');
+        return redirect()->intended('/dashboard');
     }
 
     return back()->withErrors(['username' => 'Email atau username dan password tidak sesuai.']);
