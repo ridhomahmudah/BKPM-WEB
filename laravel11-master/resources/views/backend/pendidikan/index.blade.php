@@ -41,16 +41,24 @@
                                 @foreach ($pendidikan as $item)
                                 <tr>
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->getTingkatan() }}</td>
+                                    <td>{{ $item->tingkatan }}</td>
                                     <td>{{ $item->tahun_masuk }}</td>
                                     <td>{{ $item->tahun_keluar }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-warning" href="{{ route('pendidikan.edit', $item->id) }}"><i class="fa fa-edit"></i></a>
-                                            <form method="POST" action="{{ route('pendidikan.destroy', $item->id) }}">
+                                            <!-- Tombol Edit -->
+                                            <a class="btn btn-warning" href="{{ route('pendidikan.edit', $item->id) }}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <!-- Tombol Hapus -->
+                                            <form action="{{ route('pendidikan.destroy', $item->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                                                <button type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </button>
                                             </form>
                                         </div>
                                     </td>
