@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\PendidikanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManagementUserController;
 use Illuminate\Support\Facades\Route;
@@ -104,4 +105,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::resource('pengalaman_kerja', PengalamanKerjaController::class);
+    Route::resource('pendidikan', PendidikanController::class);
 });
