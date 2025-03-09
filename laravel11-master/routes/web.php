@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\PengalamanKerjaController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\CobaController;
 
 
 
@@ -119,4 +120,8 @@ Route::get('/session/create', [SessionController::class, 'create']);
  Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
  
  Route::get('/formulir', [PegawaiController::class, 'formulir']);
- Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+ Route::post('/formulir/proses', [PegawaiController::class,'proses']);
+
+ //coba error
+
+ Route::get('/cobaerror/{nama?}', [CobaController::class, 'index']);
