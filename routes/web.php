@@ -156,10 +156,11 @@ Route::post('/upload/resize', [UploadController::class, 'resize_upload'])->name(
 
 Route::get('/dropzone', [UploadController::class, 'dropzone'])->name('dropzone');
 Route::post('/dropzone/store', [UploadController::class, 'dropzone_store'])->name('dropzone.store');
+
 Route::get('/pdf_upload', [UploadController::class, 'pdf_upload'])->name('pdf.upload');
 Route::post('/pdf/store', [UploadController::class, 'pdf_store'])->name('pdf.store');
 
-
+//Acara 21-22
 Route::get('/api/pendidikan', [ApiPendidikanController::class, 'getAll']);
 Route::get('/api/pendidikan/{id}', [ApiPendidikanController::class, 'getPen']);
 Route::post('/api/pendidikan', [ApiPendidikanController::class, 'createPen']);
